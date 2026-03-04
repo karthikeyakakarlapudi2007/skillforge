@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillForge – Instructors</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { 
+    font-family: Arial, sans-serif;
+     color: #333; 
+     background: #fff; }
+
+  nav { 
+    background: #1a73e8;
+    padding: 14px 20px; display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 10px; }
+
+  .logo { 
+    color: white;
+     font-size: 22px; 
+     font-weight: bold;
+      text-decoration: none; }
+
+  .nav-links { 
+    display: flex;
+     gap: 18px;
+      flex-wrap: wrap; }
+  .nav-links a { 
+    color: white;
+     text-decoration: none;
+      font-size: 15px; }
+
+  .nav-links a:hover { text-decoration: underline; }
+
+  .page-header {
+     background: #e8f0fe; 
+     padding: 40px 20px; 
+     text-align: center; }
+
+  .page-header h1 { 
+    font-size: 28px; 
+    color: #1a73e8; 
+    margin-bottom: 8px; }
+  .page-header p { 
+    font-size: 15px; 
+    color: #555; }
+
+  .stats { 
+    display: flex; 
+    justify-content: center;
+     gap: 40px; flex-wrap: wrap; 
+     padding: 25px 20px; 
+     border-bottom: 1px solid #eee; 
+     background: #fff; }
+
+  .stat { text-align: center; }
+  .stat h2 { font-size: 26px; color: #1a73e8; }
+  .stat p { font-size: 13px; color: #777; margin-top: 3px; }
+
+  .featured-section { 
+    padding: 40px 20px;
+     max-width: 900px; 
+     margin: 0 auto; }
+  .featured-section h2 { 
+    font-size: 22px;
+    margin-bottom: 20px; }
+
+  .featured-card { 
+    background: #f5f5f5; 
+    border-radius: 8px;
+     padding: 24px; 
+     display: flex; 
+     gap: 24px; 
+     align-items: flex-start; 
+     flex-wrap: wrap; }
+
+  .featured-card img {
+     width: 120px; 
+    height: 120px; 
+    border-radius: 50%; 
+    object-fit: cover;
+     border: 3px solid #1a73e8; }
+
+  .featured-info h3 { 
+    font-size: 20px; 
+    margin-bottom: 4px; }
+  .featured-info .role { 
+    color: #1a73e8; 
+    font-size: 14px;
+     margin-bottom: 10px; }
+  .featured-info p { 
+    font-size: 14px;
+     color: #555; 
+     line-height: 1.6;
+      max-width: 500px;
+       margin-bottom: 14px; }
+  .fstats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .fstat strong { display: block; font-size: 18px; color: #1a73e8; }
+  .fstat span { font-size: 12px; color: #777; }
+
+  .instructors-section { 
+    padding: 40px 20px;
+     max-width: 1000px;
+      margin: 0 auto; }
+  .instructors-section h2 { font-size: 22px; margin-bottom: 20px; }
+  .instructor-grid { display: flex; flex-wrap: wrap; gap: 20px; }
+  .instructor-card { 
+    background: white;
+     border: 1px solid #ddd;
+      border-radius: 8px;
+       padding: 20px;
+        width: 280px;
+         text-align: center; }
+  .instructor-card img { 
+    width: 80px; 
+    height: 80px;
+     border-radius: 50%; 
+     object-fit: cover; 
+     border: 2px solid #1a73e8; 
+     margin-bottom: 12px; }
+  .instructor-card h3 { font-size: 15px; margin-bottom: 4px; }
+  .instructor-card .role { 
+    font-size: 13px;
+     color: #1a73e8;
+      margin-bottom: 8px; }
+  .instructor-card p { 
+    font-size: 13px; 
+    color: #777;
+     margin-bottom: 12px; 
+     line-height: 1.5; }
+  .inst-stats { 
+    display: flex; 
+    justify-content: center; 
+    gap: 16px; 
+    font-size: 12px; 
+    color: #888; 
+    margin-bottom: 12px; }
+  .inst-stats strong { display: block; color: #333; font-size: 14px; }
+  .view-btn { 
+    background: #1a73e8;
+     color: white; 
+     padding: 7px 18px; 
+     border-radius: 4px; 
+     text-decoration: none;
+      font-size: 13px; }
+  .view-btn:hover { background: #1558b0; }
+
+  .apply-banner { 
+    background: #e8f0fe; 
+    padding: 40px 20px; 
+    text-align: center; 
+    border-top: 1px solid #ddd; }
+  .apply-banner h2 { 
+    font-size: 22px; 
+    margin-bottom: 10px; 
+    color: #1a73e8; }
+  .apply-banner p { 
+    font-size: 14px; 
+    color: #555; 
+    max-width: 500px; 
+    margin: 0 auto 20px; }
+  .apply-banner ul { 
+    list-style: none;
+     display: flex; 
+     flex-wrap: wrap; 
+     justify-content: center; 
+     gap: 12px; margin-bottom: 20px; }
+  .apply-banner ul li::before { content: "✓ "; color: #1a73e8; font-weight: bold; }
+  .apply-banner ul li { font-size: 14px; color: #444; }
+  .btn { 
+    background: #1a73e8;
+     color: white;
+      padding: 11px 28px; 
+      border-radius: 5px; 
+      text-decoration: none; 
+      font-size: 15px; 
+      display: inline-block; }
+  .btn:hover { background: #1558b0; }
+
+  footer { 
+    background: #222; 
+    color: #ccc; 
+    text-align: center; 
+    padding: 24px 20px; 
+    font-size: 14px; }
+  footer a { 
+    color: #90bfff; 
+    text-decoration: none; 
+    margin: 0 8px; }
+  footer a:hover { text-decoration: underline; }
+  .footer-links { margin-top: 10px; }
+
+  @media (max-width: 600px) {
+    .instructor-card { width: 100%; }
+    .featured-card {
+         flex-direction: column; 
+         align-items: center; 
+         text-align: center; }
+    .fstats { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">SkillForge</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="instructors.html">Instructors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>Meet Our Instructors</h1>
+  <p>Learn from industry professionals with real-world experience.</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><h2>120+</h2><p>Expert Instructors</p></div>
+  <div class="stat"><h2>50K+</h2><p>Total Students</p></div>
+  <div class="stat"><h2>320+</h2><p>Courses Created</p></div>
+  <div class="stat"><h2>4.8★</h2><p>Average Rating</p></div>
+</div>
+
+<div class="featured-section">
+  <h2>⭐ Featured Instructor</h2>
+  <div class="featured-card">
+    <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png"/>
+    <div class="featured-info">
+      <h3>Dr. Maya Patel</h3>
+      <div class="role">AI Researcher & Data Science Lead</div>
+      <p>Former Google Brain researcher with 12+ years in machine learning and AI. Author of "Practical Deep Learning," bringing cutting-edge research into accessible project-based courses loved by 28,000+ students worldwide.</p>
+      <div class="fstats">
+        <div class="fstat"><strong>28K+</strong><span>Students</span></div>
+        <div class="fstat"><strong>8</strong><span>Courses</span></div>
+        <div class="fstat"><strong>4.9★</strong><span>Rating</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="instructors-section">
+  <h2>All Instructors</h2>
+  <div class="instructor-grid">
+
+    <div class="instructor-card">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png"/>
+      <h3>Alex Thompson</h3>
+      <div class="role">Senior Full-Stack Engineer</div>
+      <p>Ex-Airbnb engineer. Passionate about React ecosystem and clean architecture. 10 years building at scale.</p>
+      <div class="inst-stats"><div><strong>14K</strong>Students</div><div><strong>6</strong>Courses</div><div><strong>4.9★</strong>Rating</div></div>
+      <a href="courses.html" class="view-btn">View Courses</a>
+    </div>
+
+    <div class="instructor-card">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png"/>
+      <h3>Sara Kim</h3>
+      <div class="role">Lead UX Designer</div>
+      <p>Design leader at Spotify & Dropbox. Specializes in design systems, Figma, and user-centered product design.</p>
+      <div class="inst-stats"><div><strong>9.8K</strong>Students</div><div><strong>4</strong>Courses</div><div><strong>4.8★</strong>Rating</div></div>
+      <a href="courses.html" class="view-btn">View Courses</a>
+    </div>
+
+    <div class="instructor-card">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png"/>
+      <h3>Chris Lee</h3>
+      <div class="role">Backend & Cloud Architect</div>
+      <p>AWS Certified Solutions Architect. Built infrastructure for 10M+ user applications at Fortune 500 companies.</p>
+      <div class="inst-stats"><div><strong>11K</strong>Students</div><div><strong>5</strong>Courses</div><div><strong>4.9★</strong>Rating</div></div>
+      <a href="courses.html" class="view-btn">View Courses</a>
+    </div>
+
+    <div class="instructor-card">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png"/>
+      <h3>Carlos Rivera</h3>
+      <div class="role">Data Engineer & SQL Expert</div>
+      <p>Database architect with 15 years' experience in financial tech. Author of best-selling SQL tutorials.</p>
+      <div class="inst-stats"><div><strong>7.2K</strong>Students</div><div><strong>3</strong>Courses</div><div><strong>4.7★</strong>Rating</div></div>
+      <a href="courses.html" class="view-btn">View Courses</a>
+    </div>
+
+    <div class="instructor-card">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png"/>
+      <h3>Anita Roy</h3>
+      <div class="role">Mobile Dev Specialist</div>
+      <p>Flutter GDE (Google Developer Expert). Creator of 20+ published apps with 5M+ combined installs.</p>
+      <div class="inst-stats"><div><strong>8.5K</strong>Students</div><div><strong>4</strong>Courses</div><div><strong>4.8★</strong>Rating</div></div>
+      <a href="courses.html" class="view-btn">View Courses</a>
+    </div>
+
+    <div class="instructor-card">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png"/>
+      <h3>Nina Walsh</h3>
+      <div class="role">Growth & Marketing Strategist</div>
+      <p>Grew three SaaS startups to $10M ARR. SEO consultant for HubSpot, Moz, and Semrush partner.</p>
+      <div class="inst-stats"><div><strong>6.9K</strong>Students</div><div><strong>3</strong>Courses</div><div><strong>4.8★</strong>Rating</div></div>
+      <a href="courses.html" class="view-btn">View Courses</a>
+    </div>
+
+  </div>
+</div>
+<div class="apply-banner">
+  <h2>Become an Instructor</h2>
+  <p>Share your expertise with thousands of learners and earn income doing what you love.</p>
+  <ul>
+    <li>Keep 70% revenue</li>
+    <li>Global student reach</li>
+    <li>Full production support</li>
+    <li>Marketing assistance</li>
+  </ul>
+  <a href="contact.html" class="btn">Apply to Teach</a>
+</div>
+
+<footer>
+  <p>© 2025 SkillForge. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="instructors.html">Instructors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
