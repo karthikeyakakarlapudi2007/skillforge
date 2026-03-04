@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillForge – Courses</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { 
+    font-family: Arial, sans-serif; 
+    color: #333;
+     background: #fff; }
+
+  nav { 
+    background: #1a73e8; 
+    padding: 14px 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 10px; }
+  .logo { 
+    color: white; 
+    font-size: 22px; 
+    font-weight: bold; 
+    text-decoration: none; }
+  .nav-links { 
+    display: flex; 
+    gap: 18px; 
+    flex-wrap: wrap; }
+  .nav-links a {
+     color: white; 
+     text-decoration: none;
+      font-size: 15px; }
+  .nav-links a:hover { text-decoration: underline; }
+
+  .page-header { 
+    background: #e8f0fe; 
+    padding: 40px 20px; 
+    text-align: center; }
+  .page-header h1 { 
+    font-size: 28px; 
+    color: #1a73e8; 
+    margin-bottom: 8px; }
+  .page-header p { font-size: 15px; color: #555; }
+
+  .filter-bar { 
+    background: #f5f5f5; 
+    padding: 14px 20px; 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    align-items: center; 
+    border-bottom: 1px solid #ddd; }
+  .filter-bar button { 
+    background: white; 
+    border: 1px solid #ddd; 
+    padding: 7px 16px; 
+    border-radius: 20px; 
+    font-size: 13px; 
+    cursor: pointer; }
+  .filter-bar button.active, .filter-bar button:hover { 
+    background: #1a73e8; 
+    color: white; 
+    border-color: #1a73e8; }
+  .filter-bar input {
+     margin-left: auto; 
+     padding: 7px 14px; 
+     border: 1px solid #ddd; 
+      border-radius: 20px; 
+      font-size: 13px; 
+      outline: none; }
+
+  .courses-section { 
+    padding: 30px 20px;
+     max-width: 1000px;
+      margin: 0 auto; }
+  .count { 
+    font-size: 14px; 
+    color: #777;
+     margin-bottom: 20px; }
+  .course-grid { 
+    display: flex; 
+    flex-wrap: wrap;
+     gap: 20px; }
+  .course-card {
+     background: white;
+      border: 1px solid #ddd;
+       border-radius: 8px;
+        width: 290px; 
+        overflow: hidden; }
+  .course-card img { 
+    width: 100%; 
+    height: 160px; 
+    object-fit: cover; 
+    display: block; }
+  .course-body { padding: 14px; }
+  .badge { 
+    display: inline-block; 
+    background: #e8f0fe; 
+    color: #1a73e8; 
+    font-size: 11px;
+     padding: 2px 8px; 
+     border-radius: 10px;
+      margin-bottom: 7px; }
+  .course-body h3 { 
+    font-size: 14px; 
+    margin-bottom: 5px; 
+    line-height: 1.4; }
+  .course-body .by { 
+    font-size: 12px; 
+    color: #888; 
+    margin-bottom: 4px; }
+  .course-body .meta { 
+    font-size: 12px; 
+    color: #888; 
+    margin-bottom: 10px; }
+  .course-footer { 
+    display: flex; 
+    justify-content: space-between;
+     align-items: center; 
+     border-top: 1px solid #eee; 
+     padding-top: 10px; }
+  .price { 
+    font-weight: bold;
+     color: #1a73e8; 
+     font-size: 16px; }
+  .old { 
+    font-size: 12px;
+     color: #aaa; 
+     text-decoration: line-through;
+      margin-left: 4px; }
+  .enroll { 
+    background: #1a73e8;
+     color: white; 
+     padding: 6px 14px; 
+     border-radius: 4px; 
+     text-decoration: none; 
+     font-size: 13px; }
+  .enroll:hover { background: #1558b0; }
+
+  .promo { 
+    background: #e8f0fe; 
+    border-left: 4px solid #1a73e8; 
+    padding: 16px 20px; 
+    margin: 20px; 
+    border-radius: 6px; 
+    font-size: 14px; }
+  .promo strong { color: #1a73e8; }
+
+  footer {
+     background: #222; 
+     color: #ccc; 
+     text-align: center; 
+     padding: 24px 20px; 
+     font-size: 14px; }
+  footer a { 
+    color: #90bfff; 
+    text-decoration: none; 
+    margin: 0 8px; }
+  footer a:hover { text-decoration: underline; }
+  .footer-links { margin-top: 10px; }
+
+  @media (max-width: 600px) {
+    .course-card { width: 100%; }
+    .filter-bar input { width: 100%; margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">SkillForge</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="instructors.html">Instructors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>All Courses</h1>
+  <p>320+ expert-led courses to take you from beginner to job-ready.</p>
+</div>
+
+<div class="filter-bar">
+  <button class="active">All</button>
+  <butto>Web Dev</button>
+  <button>Data Science</button>
+  <button>Design</button>
+  <button>Mobile</button>
+  <button>Marketing</button>
+  <input type="text" placeholder="🔍  Search courses..." oninput="search(this.value)">
+</div>
+
+<div class="promo"> <strong>Save 50%</strong> — Use code <strong>FORGE50</strong> at checkout. Limited time only!</div>
+
+<div class="courses-section">
+  <div class="count" id="count">Showing <strong>12</strong> courses</div>
+  <div class="course-grid" id="grid">
+
+    <div class="course-card" data-cat="webdev">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772609940/Screenshot_2026-03-04_130855_u6q6qt.png"/>
+      <div class="course-body">
+        <span class="badge">Bestseller</span>
+        <h3>Complete React 19 Developer Course</h3>
+        <div class="by">By Alex Thompson</div>
+        <div class="meta">⭐ 4.9 &nbsp;•&nbsp; 38h &nbsp;•&nbsp; Intermediate</div>
+        <div class="course-footer"><div><span class="price">₹8,999</span><span class="old">₹13,999</span></div><a href="#" class="enroll">Enroll</a></div>
+      </div>
+    </div>
+
+    <div class="course-card" data-cat="data">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610016/Screenshot_2026-03-04_131010_uagvhm.png"/>
+      <div class="course-body">
+        <span class="badge">Hot </span>
+        <h3>Python for Data Science & AI</h3>
+        <div class="by">By Dr. Maya Patel</div>
+        <div class="meta">⭐ 4.8 &nbsp;•&nbsp; 44h &nbsp;•&nbsp; Beginner</div>
+        <div class="course-footer"><div><span class="price">₹8,999</span><span class="old">₹12,999</span></div><a href="#" class="enroll">Enroll</a></div>
+      </div>
+    </div>
+
+    <div class="course-card" data-cat="design">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610061/Screenshot_2026-03-04_131055_untnxe.png"/>
+      <div class="course-body">
+        <span class="badge">New</span>
+        <h3>Figma & Prototyping Masterclass</h3>
+        <div class="by">By Sara Kim</div>
+        <div class="meta">⭐ 4.7 &nbsp;•&nbsp; 22h &nbsp;•&nbsp; Beginner</div>
+        <div class="course-footer"><div><span class="price">₹6,000</span><span class="old">₹5,999</span></div><a href="#" class="enroll">Enroll</a></div>
+      </div>
+    </div>
+
+    <div class="course-card" data-cat="webdev">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610110/Screenshot_2026-03-04_131145_ys9msr.png"/>
+      <div class="course-body">
+        <span class="badge">Bestseller</span>
+        <h3>Node.js & Express Backend Development</h3>
+        <div class="by">By Chris Lee</div>
+        <div class="meta">⭐ 4.9 &nbsp;•&nbsp; 30h &nbsp;•&nbsp; Intermediate</div>
+        <div class="course-footer"><div><span class="price">₹4,500</span><span class="old">6,999</span></div><a href="#" class="enroll">Enroll</a></div>
+      </div>
+    </div>
+
+    <div class="course-card" data-cat="data">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610160/Screenshot_2026-03-04_131232_kyjk0d.png"/>
+      <div class="course-body">
+        <span class="badge">Certificate</span>
+        <h3>Machine Learning A–Z with TensorFlow</h3>
+        <div class="by">By Dr. James Okon</div>
+        <div class="meta">⭐ 4.8 &nbsp;•&nbsp; 52h &nbsp;•&nbsp; Advanced</div>
+        <div class="course-footer"><div><span class="price">₹8,999</span><span class="old">₹12,999</span></div><a href="#" class="enroll">Enroll</a></div>
+      </div>
+    </div>
+
+    <div class="course-card" data-cat="mobile">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610209/Screenshot_2026-03-04_131323_wb2yip.png">/
+      <div class="course-body">
+        <span class="badge">New</span>
+        <h3>Flutter & Dart – Complete Mobile Dev</h3>
+        <div class="by">By Anita Roy</div>
+        <div class="meta">⭐ 4.6 &nbsp;•&nbsp; 34h &nbsp;•&nbsp; Beginner</div>
+        <div class="course-footer"><div><span class="price">₹5,999</span><span class="old">₹8,999</span></div><a href="#" class="enroll">Enroll</a></div>
+      </div>
+    </div>
+
+    <div class="course-card" data-cat="marketing">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610265/Screenshot_2026-03-04_131418_u3sjkd.png"/>
+      <div class="course-body">
+        <span class="badge">Updated</span>
+        <h3>Complete SEO & Content Marketing 2025</h3>
+        <div class="by">By Nina Walsh</div>
+        <div class="meta">⭐ 4.7 &nbsp;•&nbsp; 20h &nbsp;•&nbsp; Beginner</div>
+        <div class="course-footer"><div><span class="price">₹7,999</span><span class="old">$8,999</span></div><a href="#" class="enroll">Enroll</a></div>
+      </div>
+    </div>
+
+    <div class="course-card" data-cat="webdev">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610320/Screenshot_2026-03-04_131509_hhbjow.png"/>
+      <div class="course-body">
+        <span class="badge">Bestseller</span>
+        <h3>TypeScript for Professional Developers</h3>
+        <div class="by">By Marcus Cole</div>
+        <div class="meta">⭐ 4.9 &nbsp;•&nbsp; 18h &nbsp;•&nbsp; Intermediate</div>
+        <div class="course-footer"><div><span class="price">₹5,999</span><span class="old">₹7,999</span></div><a href="#" class="enroll">Enroll</a></div>
+      </div>
+    </div>
+
+    <div class="course-card" data-cat="data">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610376/Screenshot_2026-03-04_131608_n0tprp.png"/>
+      <div class="course-body">
+        <span class="badge">Certificate</span>
+        <h3>SQL & Database Design Bootcamp</h3>
+        <div class="by">By Carlos Rivera</div>
+        <div class="meta">⭐ 4.7 &nbsp;•&nbsp; 24h &nbsp;•&nbsp; Beginner</div>
+        <div class="course-footer"><div><span class="price">₹3,499</span><span class="old">₹4,999</span></div><a href="#" class="enroll">Enroll</a></div>
+      </div>
+    </div>
+
+    <div class="course-card" data-cat="design">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610435/Screenshot_2026-03-04_131659_hp8ijb.png"/>
+      <div class="course-body">
+        <span class="badge">Popular</span>
+        <h3>Motion Design & After Effects Essentials</h3>
+        <div class="by">By Lena Voigt</div>
+        <div class="meta">⭐ 4.6 &nbsp;•&nbsp; 28h &nbsp;•&nbsp; Intermediate</div>
+        <div class="course-footer"><div><span class="price">₹3,599</span><span class="old">₹6,599</span></div><a href="#" class="enroll">Enroll</a></div>
+      </div>
+    </div>
+
+    <div class="course-card" data-cat="mobile">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610489/Screenshot_2026-03-04_131801_ciqvtm.png"/>
+      <div class="course-body">
+        <span class="badge">Bestseller</span>
+        <h3>iOS App Development with Swift & SwiftUI</h3>
+        <div class="by">By David Park</div>
+        <div class="meta">⭐ 4.8 &nbsp;•&nbsp; 40h &nbsp;•&nbsp; Intermediate</div>
+        <div class="course-footer"><div><span class="price">₹5,999</span><span class="old">₹7,900</span></div><a href="#" class="enroll">Enroll</a></div>
+      </div>
+    </div>
+
+    <div class="course-card" data-cat="marketing">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610543/Screenshot_2026-03-04_131853_ioq5qx.png"/>
+      <div class="course-body">
+        <span class="badge">Hot </span>
+        <h3>Social Media Marketing Mastery</h3>
+        <div class="by">By Zara Bloom</div>
+        <div class="meta">⭐ 4.8 &nbsp;•&nbsp; 16h &nbsp;•&nbsp; Beginner</div>
+        <div class="course-footer"><div><span class="price">₹2,999</span><span class="old">₹4,999</span></div><a href="#" class="enroll">Enroll</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 SkillForge. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="instructors.html">Instructors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+
+</body>
+</html>
