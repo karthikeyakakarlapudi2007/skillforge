@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillForge – About</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { 
+    font-family: Arial, sans-serif; 
+    color: #333; 
+    background: #fff; }
+
+  nav { 
+    background: #1a73e8; 
+    padding: 14px 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 10px; }
+  .logo { 
+    color: white; 
+    font-size: 22px; 
+    font-weight: bold; 
+    text-decoration: none; }
+  .nav-links { 
+    display: flex;
+     gap: 18px; 
+     flex-wrap: wrap; }
+  .nav-links a { 
+    color: white; 
+    text-decoration: none; 
+    font-size: 15px; }
+  .nav-links a:hover { text-decoration: underline; }
+
+  .page-header { 
+    background: #e8f0fe; 
+    padding: 40px 20px; 
+    text-align: center; }
+  .page-header h1 { 
+    font-size: 28px; 
+    color: #1a73e8; 
+    margin-bottom: 8px; }
+  .page-header p { 
+    font-size: 15px; 
+    color: #555; 
+    max-width: 520px; 
+    margin: 0 auto; 
+    line-height: 1.6; }
+
+  .section { 
+    padding: 45px 20px; 
+    max-width: 900px; 
+    margin: 0 auto; }
+  .section h2 { font-size: 22px; margin-bottom: 16px; color: #222; }
+  .section p { 
+    font-size: 15px; 
+    color: #555; 
+    line-height: 1.7; 
+    margin-bottom: 12px; }
+  .quote { 
+    border-left: 4px solid #1a73e8; 
+    padding-left: 16px; 
+    font-style: italic; 
+    color: #444; 
+    font-size: 15px;
+     margin: 16px 0; }
+
+  .numbers {
+     background: #f5f5f5; 
+     padding: 40px 20px; 
+     border-top: 1px solid #eee; 
+     border-bottom: 1px solid #eee; }
+  .numbers-inner { max-width: 900px; margin: 0 auto; }
+  .numbers-inner h2 { font-size: 22px; text-align: center; margin-bottom: 24px; }
+  .num-grid { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+  .num-box { 
+    background: white; 
+    border: 1px solid #ddd;
+     border-radius: 8px;
+      padding: 20px 28px; 
+      text-align: center; 
+      min-width: 130px; }
+  .num-box h3 { font-size: 28px; color: #1a73e8; }
+  .num-box p { font-size: 13px; color: #777; margin-top: 4px; }
+
+  .timeline-section { background: #fff; padding: 45px 20px; border-bottom: 1px solid #eee; }
+  .timeline-inner { max-width: 700px; margin: 0 auto; }
+  .timeline-inner h2 { font-size: 22px; margin-bottom: 24px; }
+  .tl-item { display: flex; gap: 16px; margin-bottom: 20px; }
+  .tl-dot { 
+    width: 36px;
+     height: 36px; 
+     border-radius: 50%; 
+     background: #1a73e8; 
+     color: white; 
+     font-size: 11px; 
+     font-weight: bold; 
+     display: flex; 
+     align-items: center; 
+     justify-content: center; 
+     flex-shrink: 0; 
+     margin-top: 2px; }
+  .tl-text h4 { font-size: 15px; color: #222; margin-bottom: 4px; }
+  .tl-text p { font-size: 13px; color: #666; line-height: 1.5; }
+
+  .values-section { 
+    padding: 45px 20px; 
+    max-width: 900px; 
+    margin: 0 auto; }
+  .values-section h2 { font-size: 22px; margin-bottom: 20px; }
+  .values-grid { display: flex; flex-wrap: wrap; gap: 16px; }
+  .value-card { 
+    background: #e8f0fe;
+     border-radius: 8px; 
+     padding: 20px; 
+     width: 200px; }
+  .value-card .ico { font-size: 26px; margin-bottom: 8px; }
+  .value-card h3 { font-size: 14px; margin-bottom: 6px; }
+  .value-card p { font-size: 13px; color: #555; line-height: 1.5; }
+
+  .team-section { padding: 0 20px 45px; max-width: 900px; margin: 0 auto; }
+  .team-section h2 { font-size: 22px; margin-bottom: 20px; }
+  .team-grid { display: flex; flex-wrap: wrap; gap: 20px; }
+  .team-card { text-align: center; width: 170px; }
+  .team-card img { 
+    width: 100%; 
+    height: 160px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    margin-bottom: 10px; }
+  .team-card h4 { font-size: 14px; margin-bottom: 3px; }
+  .team-card p { font-size: 12px; color: #1a73e8; }
+
+  .cta-section { 
+    background: #1a73e8; 
+    color: white; 
+    text-align: center; 
+    padding: 40px 20px; }
+  .cta-section h2 { font-size: 24px; margin-bottom: 10px; }
+  .cta-section p { font-size: 15px; margin-bottom: 20px; opacity: 0.9; }
+  .cta-section a {
+     background: white; 
+     color: #1a73e8; 
+     padding: 11px 28px; 
+     border-radius: 5px; 
+     text-decoration: none; 
+     font-size: 15px; 
+     font-weight: bold; }
+  .cta-section a:hover { background: #e8f0fe; }
+
+  footer { 
+    background: #222; 
+    color: #ccc; 
+    text-align: center; 
+    padding: 24px 20px; 
+    font-size: 14px; }
+  footer a { color: #90bfff; text-decoration: none; margin: 0 8px; }
+  footer a:hover { text-decoration: underline; }
+  .footer-links { margin-top: 10px; }
+
+  @media (max-width: 600px) {
+    .value-card { width: 100%; }
+    .team-card { width: 140px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">SkillForge</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="instructors.html">Instructors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>About SkillForge</h1>
+  <p>We believe quality education should be accessible to everyone, everywhere.</p>
+</div>
+
+<div class="section">
+  <h2>Our Mission</h2>
+  <p>Founded in 2020 by a team of engineers, educators, and designers, SkillForge set out to solve a fundamental problem: the world's best learning resources were scattered, expensive, or hard to apply in real jobs.</p>
+  <p>We built SkillForge as a single destination where ambitious learners can find industry-relevant courses, connect with world-class instructors, and achieve real career outcomes — all at fair prices.</p>
+  <div class="quote">"The best investment you can make is in yourself. We make that investment accessible to everyone." — SkillForge Founders</div>
+  <p>Today, over 50,000 learners in 120+ countries trust SkillForge to power their professional growth. We're just getting started.</p>
+</div>
+
+<div class="numbers">
+  <div class="numbers-inner">
+    <h2>Our Impact</h2>
+    <div class="num-grid">
+      <div class="num-box"><h3>50K+</h3><p>Active Learners</p></div>
+      <div class="num-box"><h3>120+</h3><p>Countries</p></div>
+      <div class="num-box"><h3>320+</h3><p>Courses</p></div>
+      <div class="num-box"><h3>$12M+</h3><p>Student Earnings</p></div>
+      <div class="num-box"><h3>98%</h3><p>Satisfaction</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="timeline-section">
+  <div class="timeline-inner">
+    <h2>Our Journey</h2>
+    <div class="tl-item">
+      <div class="tl-dot">2020</div>
+      <div class="tl-text"><h4>Founded & First 10 Courses</h4><p>Launched with 10 beta courses and 500 early learners. Built from a shared mission to make expert learning affordable.</p></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2021</div>
+      <div class="tl-text"><h4>10,000 Students Milestone</h4><p>Crossed 10K active learners. Launched our first certification program in partnership with tech companies.</p></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2022</div>
+      <div class="tl-text"><h4>Series A & Platform 2.0</h4><p>Raised $8M. Rebuilt platform with live sessions, community forums, mentorship matching, and project-based assessments.</p></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2023</div>
+      <div class="tl-text"><h4>Global Expansion</h4><p>Launched in 40+ new markets. Onboarded 50+ international instructors. Crossed 25,000 learners worldwide.</p></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2024</div>
+      <div class="tl-text"><h4>AI-Powered Learning Paths</h4><p>Introduced personalized AI learning assistants, adaptive quizzes, and smart course recommendations.</p></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2025</div>
+      <div class="tl-text"><h4>Today & Beyond</h4><p>320+ courses, 120+ expert instructors, and a thriving global community. Building toward 1 million learners by 2027.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="values-section">
+  <h2>Our Core Values</h2>
+  <div class="values-grid">
+    <div class="value-card"><div class="ico"></div><h3>Outcome First</h3><p>Every course is designed to produce real, job-ready results.</p></div>
+    <div class="value-card"><div class="ico"></div><h3>Accessibility</h3><p>Fair pricing for every market. Learning should have no barriers.</p></div>
+    <div class="value-card"><div class="ico"></div><h3>Evidence-Based</h3><p>Courses built on cognitive science — active recall, project-based work.</p></div>
+    <div class="value-card"><div class="ico"></div><h3>Community</h3><p>Learning is better together — peer reviews, mentorship, and forums.</p></div>
+  </div>
+</div>
+>
+<div class="team-section">
+  <h2>Leadership Team</h2>
+  <div class="team-grid">
+    <div class="team-card"><img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png" alt="Ryan"><h4>Ryan Matthews</h4><p>CEO & Co-Founder</p></div>
+    <div class="team-card"><img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png" alt="Elena"><h4>Elena Vasquez</h4><p>CTO & Co-Founder</p></div>
+    <div class="team-card"><img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png" alt="Kwame"><h4>Kwame Asante</h4><p>COO & Co-Founder</p></div>
+    <div class="team-card"><img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png" alt="Aisha"><h4>Aisha Nkosi</h4><p>Head of Learning</p></div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Ready to Start Learning?</h2>
+  <p>Join 50,000+ learners already building in-demand skills with SkillForge.</p>
+  <a href="courses.html">Browse All Courses</a>
+</div>
+
+<footer>
+  <p>© 2025 SkillForge. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="instructors.html">Instructors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
