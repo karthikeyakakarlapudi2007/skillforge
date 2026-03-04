@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillForge – Home</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { 
+    font-family: Arial, sans-serif; 
+    color: #333; 
+    background: #fff; }
+  nav { 
+       background: #1a73e8; 
+       padding: 14px 20px; 
+       display: flex; 
+       justify-content: space-between; 
+       align-items: center; 
+       flex-wrap: wrap; 
+       gap: 10px; }
+  .logo { 
+     color: white; 
+     font-size: 22px; 
+     font-weight: bold;
+     text-decoration: none; }
+  .nav-links { 
+      display: flex;
+       gap: 18px;
+       flex-wrap: wrap; }
+  .nav-links a { 
+       color: white;
+       text-decoration: none; 
+       font-size: 15px; }
+  .nav-links a:hover { 
+     text-decoration: underline;
+   }
+  .hero { 
+    background: #e8f0fe;
+     text-align: center; 
+     padding: 60px 20px; }
+  .hero h1 { 
+    font-size: 34px;
+     color: #1a73e8; 
+     margin-bottom: 14px; }
+  .hero p { 
+    font-size: 17px;
+     color: #555; 
+     max-width: 520px; 
+     margin: 0 auto 24px; 
+     line-height: 1.6; }
+  .btn { background: #1a73e8;
+     color: white;
+      padding: 12px 30px;
+       border-radius: 5px; 
+       text-decoration: none;
+        font-size: 16px;
+         display: inline-block; }
+  .btn:hover { background: #1558b0; }
+
+ 
+  .stats {
+     display: flex; 
+    justify-content: center;
+     gap: 40px;
+      flex-wrap: wrap; 
+      padding: 30px 20px;
+       border-bottom: 1px solid #eee; 
+       background: #fff; }
+  .stat { text-align: center; }
+  .stat h2 { font-size: 28px; color: #1a73e8; }
+  .stat p { font-size: 14px; color: #777; margin-top: 4px; }
+
+  
+  .section { padding: 50px 20px;
+     max-width: 1000px; 
+     margin: 0 auto; }
+  .section h2 { font-size: 24px;
+     margin-bottom: 25px;
+      text-align: center; }
+  .bg-gray { background: #f5f5f5; }
+  .bg-gray .section { max-width: 100%; }
+  .bg-gray .inner { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 50px 20px; }
+  .bg-gray .inner h2 { font-size: 24px; margin-bottom: 25px; text-align: center; }
+
+  
+  .cards { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 16px; 
+    justify-content: center; }
+  .card { 
+    background: white; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    padding: 20px 16px; 
+    width: 160px;
+     text-align: center; }
+  .card .icon { font-size: 30px; margin-bottom: 8px; }
+  .card h3 { font-size: 14px; margin-bottom: 4px; }
+  .card p { font-size: 12px; color: #888; }
+
+  
+  .course-cards { 
+    display: flex;
+     flex-wrap: wrap; 
+     gap: 20px;
+      justify-content: center; }
+  .course-card { 
+    background: white; 
+    border: 1px solid #ddd;
+     border-radius: 8px; 
+     width: 290px;
+      overflow: hidden; }
+  .course-card img { 
+    width: 100%; 
+    height: 160px;
+     object-fit: cover; 
+     display: block; }
+  .course-body { padding: 14px; }
+  .course-body h3 { 
+    font-size: 15px; 
+    margin-bottom: 5px; }
+  .course-body p { 
+    font-size: 13px; 
+    color: #888; 
+    margin-bottom: 10px; }
+  .course-footer { 
+    display: flex;
+     justify-content: space-between; 
+     align-items: center; }
+  .price { 
+    font-weight: bold; 
+    color: #1a73e8; }
+  .enroll { 
+    background: #1a73e8; 
+    color: white;
+     padding: 6px 14px;
+      border-radius: 4px;
+       text-decoration: none; 
+       font-size: 13px; }
+  .enroll:hover { background: #1558b0; }
+
+  
+  .benefit-list { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 16px;
+     justify-content: center; }
+  .benefit-item { 
+    background: #e8f0fe; 
+    border-radius: 8px;
+     padding: 20px;
+      width: 200px;
+       text-align: center; }
+  .benefit-item .ico { font-size: 26px; 
+    margin-bottom: 8px; }
+  .benefit-item h4 { font-size: 14px;
+     margin-bottom: 5px; }
+  .benefit-item p { font-size: 12px; 
+    color: #555; }
+
+  
+  footer { 
+    background: #222;
+     color: #ccc; 
+     text-align: center; 
+     padding: 24px 20px;
+      font-size: 14px; }
+  footer a {
+     color: #90bfff; 
+    text-decoration: none;
+     margin: 0 8px; }
+  footer a:hover { text-decoration: underline; }
+  .footer-links { margin-top: 10px; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 24px; }
+    .stats { gap: 20px; }
+    .course-card { width: 100%; }
+    .card { width: 130px; }
+    .benefit-item { width: 140px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">SkillForge</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="instructors.html">Instructors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<div class="hero">
+  <h1>Learn Skills That Get You Hired</h1>
+  <p>Join 50,000+ learners. Expert-led online courses in tech, design, data and more — at your own pace.</p>
+  <a href="courses.html" class="btn">Browse Courses</a>
+</div>
+<div class="stats">
+  <div class="stat"><h2>50K+</h2><p>Active Learners</p></div>
+  <div class="stat"><h2>320+</h2><p>Courses</p></div>
+  <div class="stat"><h2>120+</h2><p>Instructors</p></div>
+  <div class="stat"><h2>98%</h2><p>Satisfaction Rate</p></div>
+</div>
+<div class="section">
+  <h2>Course Categories</h2>
+  <div class="cards">
+    <div class="card"><div class="icon"></div><h3>Web Development</h3><p>84 courses</p></div>
+    <div class="card"><div class="icon"></div><h3>Data Science</h3><p>62 courses</p></div>
+    <div class="card"><div class="icon"></div><h3>UI/UX Design</h3><p>48 courses</p></div>
+    <div class="card"><div class="icon"></div><h3>Cloud & DevOps</h3><p>39 courses</p></div>
+    <div class="card"><div class="icon"></div><h3>Mobile Dev</h3><p>33 courses</p></div>
+    <div class="card"><div class="icon"></div><h3>Marketing</h3><p>55 courses</p></div>
+  </div>
+</div><div class="bg-gray">
+  <div class="inner">
+    <h2>Featured Courses</h2>
+    <div class="course-cards">
+      <div class="course-card">
+        <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772609545/Screenshot_2026-03-04_130105_rbsfio.png"/>
+         <div class="course-body">
+          <h3>Full-Stack Web Development</h3>
+          <p>By Alex Thompson &nbsp; ⭐ 4.9 (2.1k)</p>
+          <div class="course-footer"><span class="price">₹2,</span><a href="courses.html" class="enroll">Enroll</a></div>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772609771/Screenshot_2026-03-04_130601_g8w4rj.png"/>
+        <div class="course-body">
+          <h3>Data Science & Machine Learning</h3>
+          <p>By Dr. Maya Patel &nbsp; ⭐ 4.8 (1.4k)</p>
+          <div class="course-footer"><span class="price">₹2,599</span><a href="courses.html" class="enroll">Enroll</a></div>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772609831/Screenshot_2026-03-04_130705_sagyc0.png"/>
+         <div class="course-body">
+          <h3>Complete UI/UX Design with Figma</h3>
+          <p>By Sara Kim &nbsp; ⭐ 4.7 (890)</p>
+          <div class="course-footer"><span class="price">₹2,999</span><a href="courses.html" class="enroll">Enroll</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <h2>Why Choose SkillForge?</h2>
+  <div class="benefit-list">
+    <div class="benefit-item"><div class="ico"></div><h4>Expert Instructors</h4><p>Learn from real industry professionals</p></div>
+    <div class="benefit-item"><div class="ico"></div><h4>Learn at Your Pace</h4><p>Lifetime access to all content</p></div>
+    <div class="benefit-item"><div class="ico"></div><h4>Hands-On Projects</h4><p>Build a real portfolio</p></div>
+    <div class="benefit-item"><div class="ico"></div><h4>Certificates</h4><p>Recognized by top employers</p></div>
+  </div>
+</div>
+<footer>
+  <p>© 2025 SkillForge. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="instructors.html">Instructors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
