@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillForge – Meet Our Instructors</title>
+<meta name="description" content="Learn from 120+ industry experts on SkillForge. Real-world professionals from top companies ready to teach you what you need to succeed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dusty-blue:#B8C7CF; --soft-blue:#C7DCE2; --cream:#F0EEDC; --beige:#E6DFC6;
+    --beige-dark:#d4c9ab; --dark:#1e2d35; --mid:#3d5360; --muted:#6b8592;
+    --border:rgba(184,199,207,0.45); --border-soft:rgba(199,220,226,0.6);
+    --shadow-sm:0 2px 12px rgba(30,45,53,0.08); --shadow-md:0 8px 32px rgba(30,45,53,0.12);
+    --shadow-lg:0 20px 60px rgba(30,45,53,0.16);
+    --radius-sm:12px; --radius:16px; --radius-lg:24px; --transition:all 0.3s ease-in-out;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;}
+
+  nav{position:sticky;top:0;z-index:100;background:var(--dusty-blue);border-bottom:1px solid var(--border);box-shadow:var(--shadow-sm);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .logo{font-size:22px;font-weight:800;text-decoration:none;color:var(--dark);letter-spacing:-0.5px;}
+  .nav-links{display:flex;gap:4px;align-items:center;}
+  .nav-links a{color:var(--dark);text-decoration:none;font-size:14px;font-weight:500;padding:8px 14px;border-radius:var(--radius-sm);transition:var(--transition);}
+  .nav-links a:hover,.nav-links a.active{background:rgba(30,45,53,0.1);}
+  .nav-cta{background:var(--beige)!important;color:var(--dark)!important;padding:9px 22px!important;border-radius:var(--radius-sm)!important;font-weight:700!important;border:1.5px solid var(--beige-dark)!important;box-shadow:var(--shadow-sm);}
+  .nav-cta:hover{background:var(--beige-dark)!important;transform:translateY(-1px);}
+
+  /* PAGE HERO */
+  .page-hero{background:linear-gradient(160deg,var(--dusty-blue) 0%,var(--soft-blue) 60%,var(--cream) 100%);border-bottom:1px solid var(--border);padding:56px 48px;text-align:center;}
+  .hero-label{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+  .page-hero h1{font-size:clamp(30px,4vw,50px);font-weight:900;letter-spacing:-1.5px;color:var(--dark);margin-bottom:12px;}
+  .page-hero p{font-size:16px;color:var(--mid);}
+
+  /* STATS */
+  .stats{display:flex;justify-content:center;gap:0;flex-wrap:wrap;padding:36px 48px;background:var(--beige);border-bottom:1.5px solid var(--beige-dark);}
+  .stat{text-align:center;padding:0 48px;position:relative;}
+  .stat:not(:last-child)::after{content:'';position:absolute;right:0;top:15%;height:70%;width:1.5px;background:var(--beige-dark);}
+  .stat h2{font-size:30px;font-weight:900;color:var(--dark);letter-spacing:-1px;}
+  .stat p{font-size:13px;color:var(--muted);margin-top:4px;font-weight:500;}
+
+  /* FEATURED */
+  .featured-section{padding:60px 48px;max-width:980px;margin:0 auto;}
+  .featured-section h2{font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:24px;color:var(--dark);}
+  .featured-card{
+    background:white;border:1.5px solid var(--border-soft);border-radius:var(--radius-lg);
+    padding:32px;display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;
+    box-shadow:var(--shadow-sm);transition:var(--transition);
+  }
+  .featured-card:hover{box-shadow:var(--shadow-md);border-color:var(--dusty-blue);}
+  .featured-card img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--dusty-blue);box-shadow:var(--shadow-sm);}
+  .featured-info h3{font-size:22px;font-weight:800;color:var(--dark);margin-bottom:5px;}
+  .featured-info .role{color:var(--muted);font-size:14px;font-weight:600;margin-bottom:12px;}
+  .featured-info p{font-size:14px;color:var(--mid);line-height:1.7;max-width:500px;margin-bottom:18px;}
+  .fstats{display:flex;gap:28px;flex-wrap:wrap;}
+  .fstat strong{display:block;font-size:20px;font-weight:900;color:var(--dark);}
+  .fstat span{font-size:12px;color:var(--muted);font-weight:500;}
+
+  /* INSTRUCTOR CARDS */
+  .instructors-section{padding:0 48px 60px;max-width:1100px;margin:0 auto;}
+  .instructors-section h2{font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:24px;color:var(--dark);}
+  .instructor-grid{display:flex;flex-wrap:wrap;gap:20px;}
+  .instructor-card{
+    background:white;border:1.5px solid var(--border-soft);border-radius:var(--radius);
+    padding:24px;width:300px;text-align:center;box-shadow:var(--shadow-sm);transition:var(--transition);
+  }
+  .instructor-card:hover{border-color:var(--dusty-blue);transform:translateY(-5px);box-shadow:var(--shadow-md);}
+  .instructor-card img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid var(--dusty-blue);margin-bottom:14px;box-shadow:var(--shadow-sm);}
+  .instructor-card h3{font-size:16px;font-weight:800;color:var(--dark);margin-bottom:4px;}
+  .instructor-card .role{font-size:13px;color:var(--muted);font-weight:600;margin-bottom:10px;}
+  .instructor-card p{font-size:13px;color:var(--mid);margin-bottom:14px;line-height:1.6;}
+  .inst-stats{display:flex;justify-content:center;gap:20px;font-size:12px;color:var(--muted);margin-bottom:16px;}
+  .inst-stats strong{display:block;color:var(--dark);font-size:15px;font-weight:800;}
+  .view-btn{
+    background:var(--beige);color:var(--dark);padding:8px 22px;border-radius:var(--radius-sm);
+    text-decoration:none;font-size:13px;font-weight:700;transition:var(--transition);
+    border:1.5px solid var(--beige-dark);display:inline-block;
+  }
+  .view-btn:hover{background:var(--dark);color:var(--cream);border-color:var(--dark);}
+
+  /* APPLY BANNER */
+  .apply-banner{
+    background:var(--soft-blue);border-top:1.5px solid var(--dusty-blue);border-bottom:1.5px solid var(--dusty-blue);
+    padding:56px 48px;text-align:center;
+  }
+  .apply-banner h2{font-size:clamp(22px,3vw,32px);font-weight:900;margin-bottom:12px;color:var(--dark);}
+  .apply-banner p{font-size:15px;color:var(--mid);max-width:500px;margin:0 auto 24px;line-height:1.7;}
+  .apply-banner ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:28px;}
+  .apply-banner ul li{font-size:14px;color:var(--mid);background:white;padding:8px 16px;border-radius:100px;border:1.5px solid var(--border);font-weight:500;}
+  .apply-banner ul li::before{content:"✓ ";color:var(--mid);font-weight:800;}
+  .btn-primary{background:var(--dark);color:var(--cream);padding:13px 34px;border-radius:var(--radius);text-decoration:none;font-size:15px;font-weight:700;transition:var(--transition);box-shadow:var(--shadow-md);display:inline-block;}
+  .btn-primary:hover{background:var(--mid);transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+
+  footer{background:var(--dusty-blue);border-top:1px solid var(--border);padding:40px 48px;text-align:center;}
+  .footer-logo{font-size:20px;font-weight:800;color:var(--dark);margin-bottom:16px;display:block;}
+  .footer-links{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;}
+  .footer-links a{color:var(--mid);text-decoration:none;font-size:14px;padding:6px 14px;border-radius:8px;transition:var(--transition);}
+  .footer-links a:hover{color:var(--dark);background:rgba(30,45,53,0.1);}
+  footer p{font-size:13px;color:var(--muted);}
+
+  .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+
+  @media(max-width:768px){
+    nav{padding:0 20px;}
+    .stats{padding:28px 20px;}
+    .stat{padding:12px 20px;}
+    .stat::after{display:none;}
+    .featured-section,.instructors-section{padding-left:20px;padding-right:20px;}
+    .instructor-card{width:100%;}
+    .featured-card{flex-direction:column;align-items:center;text-align:center;}
+    .fstats{justify-content:center;}
+    .apply-banner{padding:40px 20px;}
+    footer{padding:32px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">SkillForge</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="instructors.html" class="active">Instructors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="courses.html" class="nav-cta">Start Learning →</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="hero-label">Instructors</div>
+  <h1>Meet Our Instructors</h1>
+  <p>Learn from industry professionals with real-world experience.</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><h2>120+</h2><p>Expert Instructors</p></div>
+  <div class="stat"><h2>50K+</h2><p>Total Students</p></div>
+  <div class="stat"><h2>320+</h2><p>Courses Created</p></div>
+  <div class="stat"><h2>4.8★</h2><p>Average Rating</p></div>
+</div>
+
+<div class="featured-section fade-in">
+  <h2>Featured Instructor</h2>
+  <div class="featured-card">
+    <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png" alt="Dr. Maya Patel">
+    <div class="featured-info">
+      <h3>Dr. Maya Patel</h3>
+      <div class="role">AI Researcher &amp; Data Science Lead</div>
+      <p>Former Google Brain researcher with 12+ years in machine learning and AI. Author of "Practical Deep Learning," bringing cutting-edge research into accessible project-based courses loved by 28,000+ students worldwide.</p>
+      <div class="fstats">
+        <div class="fstat"><strong>28K+</strong><span>Students</span></div>
+        <div class="fstat"><strong>8</strong><span>Courses</span></div>
+        <div class="fstat"><strong>4.9★</strong><span>Rating</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="instructors-section fade-in">
+  <h2>All Instructors</h2>
+  <div class="instructor-grid">
+    <div class="instructor-card">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png" alt="Alex Thompson">
+      <h3>Alex Thompson</h3>
+      <div class="role">Senior Full-Stack Engineer</div>
+      <p>Ex-Airbnb engineer. Passionate about React ecosystem and clean architecture. 10 years building at scale.</p>
+      <div class="inst-stats">
+        <div><strong>14K</strong>Students</div>
+        <div><strong>6</strong>Courses</div>
+        <div><strong>4.9★</strong>Rating</div>
+      </div>
+      <a href="courses.html" class="view-btn">View Courses</a>
+    </div>
+    <div class="instructor-card">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png" alt="Sara Kim">
+      <h3>Sara Kim</h3>
+      <div class="role">Lead UX Designer</div>
+      <p>Design leader at Spotify &amp; Dropbox. Specializes in design systems, Figma, and user-centered product design.</p>
+      <div class="inst-stats">
+        <div><strong>9.8K</strong>Students</div>
+        <div><strong>4</strong>Courses</div>
+        <div><strong>4.8★</strong>Rating</div>
+      </div>
+      <a href="courses.html" class="view-btn">View Courses</a>
+    </div>
+    <div class="instructor-card">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png" alt="Chris Lee">
+      <h3>Chris Lee</h3>
+      <div class="role">Backend &amp; Cloud Architect</div>
+      <p>AWS Certified Solutions Architect. Built infrastructure for 10M+ user applications at Fortune 500 companies.</p>
+      <div class="inst-stats">
+        <div><strong>11K</strong>Students</div>
+        <div><strong>5</strong>Courses</div>
+        <div><strong>4.9★</strong>Rating</div>
+      </div>
+      <a href="courses.html" class="view-btn">View Courses</a>
+    </div>
+    <div class="instructor-card">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png" alt="Carlos Rivera">
+      <h3>Carlos Rivera</h3>
+      <div class="role">Data Engineer &amp; SQL Expert</div>
+      <p>Database architect with 15 years' experience in financial tech. Author of best-selling SQL tutorials.</p>
+      <div class="inst-stats">
+        <div><strong>7.2K</strong>Students</div>
+        <div><strong>3</strong>Courses</div>
+        <div><strong>4.7★</strong>Rating</div>
+      </div>
+      <a href="courses.html" class="view-btn">View Courses</a>
+    </div>
+    <div class="instructor-card">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png" alt="Anita Roy">
+      <h3>Anita Roy</h3>
+      <div class="role">Mobile Dev Specialist</div>
+      <p>Flutter GDE (Google Developer Expert). Creator of 20+ published apps with 5M+ combined installs.</p>
+      <div class="inst-stats">
+        <div><strong>8.5K</strong>Students</div>
+        <div><strong>4</strong>Courses</div>
+        <div><strong>4.8★</strong>Rating</div>
+      </div>
+      <a href="courses.html" class="view-btn">View Courses</a>
+    </div>
+    <div class="instructor-card">
+      <img src="https://res.cloudinary.com/decpxcmj4/image/upload/v1772610624/Screenshot_2026-03-04_132016_pbjkct.png" alt="Nina Walsh">
+      <h3>Nina Walsh</h3>
+      <div class="role">Growth &amp; Marketing Strategist</div>
+      <p>Grew three SaaS startups to $10M ARR. SEO consultant for HubSpot, Moz, and Semrush partner.</p>
+      <div class="inst-stats">
+        <div><strong>6.9K</strong>Students</div>
+        <div><strong>3</strong>Courses</div>
+        <div><strong>4.8★</strong>Rating</div>
+      </div>
+      <a href="courses.html" class="view-btn">View Courses</a>
+    </div>
+  </div>
+</div>
+
+<div class="apply-banner fade-in">
+  <h2>Become an Instructor</h2>
+  <p>Share your expertise with thousands of learners and earn income doing what you love.</p>
+  <ul>
+    <li>Keep 70% revenue</li>
+    <li>Global student reach</li>
+    <li>Full production support</li>
+    <li>Marketing assistance</li>
+  </ul>
+  <a href="contact.html" class="btn-primary">Apply to Teach →</a>
+</div>
+
+<footer>
+  <span class="footer-logo">SkillForge</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="instructors.html">Instructors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p>© 2025 SkillForge. All rights reserved.</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
